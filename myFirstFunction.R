@@ -21,5 +21,14 @@ columnmean <- function(y, removeNA = TRUE) {
   means
 }
 
+columnsd <- function(x, removeNA = TRUE) {
+        nc <- ncol(x)
+        sds <- numeric(nc)
+        for(i in 1:nc) {
+                sds[i] <- sd(x[, i], na.rm = removeNA)
+        }
+        sds
+}
+
 data <- read.csv("hw1_data.csv")
 columnmean(data)
